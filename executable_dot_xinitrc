@@ -1,0 +1,7 @@
+export QT_QPA_PLATFORMTHEM=qt5ct
+sxhkd &
+xrandr --mode 1920x1080 --rate 144hz &
+xsetroot -xcf /usr/share/icons/Adwaita/cursors/left_ptr 24 &
+alacritty &
+flameshot &
+bspwm 
