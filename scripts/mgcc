@@ -1,0 +1,6 @@
+#!/bin/bash
+
+FILE_CPP=$1
+FILENAME=${FILE_CPP%.*} 
+
+g++ -std=c++17 $FILE_CPP -o $FILENAME

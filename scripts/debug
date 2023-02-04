@@ -1,0 +1,12 @@
+#!/bin/bash
+#$1 = wrong one
+#$1 = correct one
+
+for i in {1..100};do
+    echo $i
+    ./gen $i > sample.txt
+    ./$1 < sample.txt > output1.txt
+    ./$2 < sample.txt > output2.txt
+    # diff -w output1.txt output2.txt || break;
+    diff -u output1.txt output2.txt || break; 
+done

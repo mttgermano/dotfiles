@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cp /home/matt/prog/docs/cpp/template.cpp ./$1.cpp
+

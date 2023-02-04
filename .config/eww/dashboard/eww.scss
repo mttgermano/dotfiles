@@ -1,0 +1,112 @@
+/* Global */
+*{
+    all: unset;
+    font-family: monospace;
+
+}
+
+.main {
+    background-color: #121212;
+    border-radius: 16px;
+
+}
+
+
+/* Backgroung */
+.bg{
+    background-color: #CCCCFF;
+    opacity: 0.1;
+}
+
+
+
+/* Profile */
+.profile{
+    background-color: #121212;
+    border-radius: 16px;
+
+}
+
+.username{
+    color: #D46389;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.hostname{
+    color: #8FBCBB;
+    font-size: 22px;
+    font-weight: bold;
+    margin: -15px 0px 0px 0px;
+
+}
+
+.photocard{
+    color: #2E3440;
+    min-height: 200px;
+    min-width: 200px;
+    margin: 65px 0px 0px 0px;
+    border-radius: 100%;
+
+}
+
+
+
+/* Buttons */
+// First Layer
+.vpn{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.folder{
+    font-size: 48px;
+    font-weight: bold;
+    //color: #CE9C47
+}
+
+.wallpaper-box{
+    font-size: 48px;
+    font-weight:bold;
+    background-color: #121212;
+}
+
+.wallpaper{
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #121212;
+}
+
+
+
+// Second Layer
+.gif{
+    color: #CCCCFF;
+    background-color: #121212;
+    border-radius: 16px;
+}
+
+
+// Third Layer
+.button_logout,.button_sleep,.button_poweroff,.button_reboot{
+    font-size: 48px;
+    font-weight: bold;
+
+}
+
+.button_poweroff{
+    color: #88C0D0;
+}
+
+.button_logout{
+    color: #EBCB8B;
+}
+
+.color_sleep{
+    color: #A3BE8C;
+}
+
+.color_reboot{
+    color: #BF616A;
+}
