@@ -14,10 +14,16 @@ super + {2,3,4,5}
 super + l 
     bspc rule -a Alacritty -o desktop=* state=tiled && alacritty
     
-
 # screenshots
 super + shift + s
 	flameshot gui
+
+# vc sabe
+super + x
+    bspc desktop -f IV && \
+    bspc rule -a Alacritty -o desktop=^4 state=floating rectangle=1285x780+7+53 && alacritty & \
+    bspc rule -a Alacritty -o desktop=^4 state=floating rectangle=605x780+1305+53 && alacritty & \
+    bspc rule -a Alacritty -o desktop=^4 state=floating rectangle=1903x222+8+847 && alacritty &
 
 # program launcher
 super + @space
