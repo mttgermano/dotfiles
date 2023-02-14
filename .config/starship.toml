@@ -75,6 +75,7 @@ format = '[$symbol($version)]($style) '
 format = '[$symbol($version)]($style) '
 
 [lua]
+symbol = ' '
 format = '[$symbol($version)]($style) '
 
 [rust]

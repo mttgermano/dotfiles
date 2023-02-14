@@ -24,7 +24,7 @@ function cd {
     ls
 }
 
-zombie (){
+zombies (){
     var=$(ps aux | grep 'Z' | wc -l)
     var=$((var -2))
     if [[ var -gt 0 ]]; then

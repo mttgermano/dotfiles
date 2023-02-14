@@ -2,20 +2,19 @@
 
 function clop(){
     path+="$1/"
-    echo "-------------------------------"
-    echo "$path"
-    
+   
     for FILE in $path{.[!.]*,*}; do
         f=$(basename $FILE)
         checkpath="$HOME/${FILE#$basepath/}"
         echo "checkpath: $checkpath"
+        ((VFILES+=1))
 
         [[ -f "$checkpath" ]] && cp $checkpath $path 
         [[ -d "$checkpath" ]] && clop $f
     done
     path=${path%$1/}
-    echo "$path"
 }
+
 
 basepath=$HOME/dotfiles
 path=$basepath
@@ -27,8 +26,11 @@ if [[ $#  -eq 0 ]]; then
     echo "-------------------------"
 
 elif [[ $1 == "source" ]]; then
+    # Later, create a progressbar
+    NFILES=$(tree -a $HOME/dotfiles/ | tail -n 1 | cut -d " " -f 3)
+    VFILES=0
     clop
-    git add . && git commit -m "update" && git push
+    (cd $HOME/dotfiles/; git add . && git commit -m "update" && git push)
 else
     if [[ -d $1 ]]; then
         cp -r $1 /home/matt/dotfiles/$2/$1
