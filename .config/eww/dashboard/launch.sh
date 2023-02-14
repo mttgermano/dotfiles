@@ -2,7 +2,7 @@
 
 ###      Variables      ###
 FILE="/home/matt/.config/eww/launch.sh"
-CFG="/home/matt/.config/eww/dashboard/"
+CFG="/home/matt/.config/eww/dashboard"
 EWW="/home/matt/.config/eww/target/release/eww"
 #EWW=`which eww`
 

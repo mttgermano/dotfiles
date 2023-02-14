@@ -1,19 +1,16 @@
 ;; eww config
 ;; @author: htpps://github.com/mttgermano
-;; last edit: 04/01/2023
+;; last edit: 12/02/2023
 
 
 
 ;;Variables====================================================;;
 (defvar IMG_PROFILE "/home/matt/Pictures/Profile/profile.jpg")
-;;(defvar GIF "/home/matt/Pictures/Profile/eww.gif")
-(defvar GIF "/home/matt/Pictures/wallpapers/waterfall.jpg")
+(defvar GIF "/home/matt/Pictures/Profile/eww3.gif")            ;; you have to resize the gif, thus eww's bug
 (defvar NAME "matt")
 (defvar DESKTOP "book")
-
 (defpoll WALLPAPER :interval "300s" :initial "lua.png"
   `/home/matt/.config/eww/dashboard/scripts/change_wallpaper.sh`)
-(defvar TESTE "[a, b, c]")
 
 ;;""
 
