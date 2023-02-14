@@ -11,9 +11,7 @@ function clop(){
         echo "checkpath: $checkpath"
 
         [[ -f "$checkpath" ]] && cp $checkpath $path 
-        if [[ -d "$checkpath" ]]; then 
-            clop $f
-        fi
+        [[ -d "$checkpath" ]] && clop $f
     done
     path=${path%$1/}
     echo "$path"
@@ -30,6 +28,7 @@ if [[ $#  -eq 0 ]]; then
 
 elif [[ $1 == "source" ]]; then
     clop
+    git add . && git commit -m "update" && git push
 else
     if [[ -d $1 ]]; then
         cp -r $1 /home/matt/dotfiles/$2/$1
