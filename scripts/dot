@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [[ -d $1 ]];then
-    cp -r $1 /home/matt/dotfiles/$2/$1
-else
-    cp $1 /home/matt/dotfiles/$2/$1
-fi
