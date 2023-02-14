@@ -30,7 +30,7 @@ elif [[ $1 == "source" ]]; then
     NFILES=$(tree -a $HOME/dotfiles/ | tail -n 1 | cut -d " " -f 3)
     VFILES=0
     clop
-    (cd $HOME/dotfiles/; git add . && git commit -m "update" && git push)
+    (cd $HOME/dotfiles/; git add . && git diff && git commit -m "update" && git push)
 else
     if [[ -d $1 ]]; then
         cp -r $1 /home/matt/dotfiles/$2/$1
