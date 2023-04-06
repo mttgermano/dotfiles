@@ -2,7 +2,7 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V
+bspc monitor -d I II III IV V VI VII
 
 #Tamanho borda
 bspc config border_width        1
@@ -15,8 +15,11 @@ bspc config right_padding	    -4
 
 # Launch Apps
 # OBS: you have to launch the applications first in .xinitrc
-bspc rule firefox -o desktop=^2 state=fullscreen        # don't know why, but this don't oppen in fullscreen :( 
-bspc rule -a Alacritty desktop=^1 state=floating rectangle=950x1017+965+53 --focous --follow
+bspc rule librewolf -o desktop="^2" state=fullscreen        # don't know why, but this don't oppen in fullscreen :( 
+bspc rule -a Alacritty -o desktop=^1 state=floating rectangle=950x1017+965+53 --focous --follow -f I
+bspc rule discord -o desktop="^5" state=tiled
+
+# workspace 5, bashtop + dolphin
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true

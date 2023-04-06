@@ -1,16 +1,19 @@
 # Alias ########################################################
-alias src="source /home/matt/.bashrc"
-alias ls="lsd --group-directories-first -X"
-alias ll="lsd --group-directories-first -lah"
 alias cat="bat"
-alias xclip="xclip -selection clipboard"
-alias pwc="pwd | xclip"
-alias poweroff="sudo systemctl poweroff"
-alias j="julia"
-alias py="python"
-alias start="source ./env/bin/activate"
 alias dirfonts="cd /home/matt/.local/share/fonts/"
 alias dot="dot.sh"
+#alias env_start="source /home/matt/prog/projects/env/bin/activate" 
+alias env_start="source ./env/bin/activate" 
+alias env_stop="deactivate"
+alias j="julia"
+alias ls="lsd --group-directories-first -X"
+alias ll="lsd --group-directories-first -lah"
+alias poweroff="sudo systemctl poweroff"
+alias py="python"
+alias pwc="pwd | xclip"
+alias src="source /home/matt/.bashrc"
+alias update="sudo pacman -Syu"
+alias xclip="xclip -selection clipboard"
 
 # Functions ####################################################
 # If a command is builtin, use the keywords function and builtin 
@@ -24,6 +27,10 @@ function cd {
     ls
 }
 
+jmp (){
+    cd $(find /home/matt/* -type d | fzf)
+}
+
 zombies (){
     var=$(ps aux | grep 'Z' | wc -l)
     var=$((var -2))
@@ -33,3 +40,4 @@ zombies (){
         echo "No Zombie Process!"
     fi
 }
+

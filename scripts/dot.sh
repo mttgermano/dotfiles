@@ -25,12 +25,20 @@ if [[ $#  -eq 0 ]]; then
     echo "You must give a parameter"
     echo "-------------------------"
 
+#Updating Files
 elif [[ $1 == "source" ]]; then
-    # Later, create a progressbar
+    #TODO
+    # create a progressbar
     NFILES=$(tree -a $HOME/dotfiles/ | tail -n 1 | cut -d " " -f 3)
     VFILES=0
     clop
-    (cd $HOME/dotfiles/; echo -e; git diff; echo -e; git add . && git commit -m "update" && git push)
+    (cd $HOME/dotfiles/; echo -e; git diff; echo -e; gitlz)
+    # (cd $HOME/dotfiles/; echo -e; git diff; echo -e; git add . && git commit -m "update" && git push)
+
+#TODO
+#Initializing files in a new computer
+# elif [[ $1 == "init" ]]; then
+    
 else
     if [[ -d $1 ]]; then
         cp -r $1 /home/matt/dotfiles/$2/$1

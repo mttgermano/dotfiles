@@ -1,3 +1,10 @@
 #!/bin/bash
 
-./$1 < sample.txt
+# CPP
+if [[ $1 == *.cpp ]]; then
+    ./${1%.cpp} < sample.txt
+
+# Python
+elif [[ $1 == *.py ]]; then
+    python $1 < sample.txt
+fi

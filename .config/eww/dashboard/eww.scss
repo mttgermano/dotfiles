@@ -1,10 +1,9 @@
-/* Global */
+/* Global */////////////////////////////////////////////////////
 *{
     all: unset;
     font-family: monospace;
 
 }
-
 .main {
     background-color: #121212;
     border-radius: 16px;
@@ -12,7 +11,7 @@
 }
 
 
-/* Backgroung */
+/* Backgroung */////////////////////////////////////////////////
 .bg{
     background-color: #CCCCFF;
     opacity: 0.1;
@@ -20,7 +19,7 @@
 
 
 
-/* Profile */
+/* Profile *////////////////////////////////////////////////////
 .profile{
     background-color: #121212;
     border-radius: 16px;
@@ -28,14 +27,14 @@
 }
 
 .username{
-    color: #D46389;
+    color: #6272A4;
     font-size: 30px;
     font-weight: bold;
 
 }
 
 .hostname{
-    color: #8FBCBB;
+    color: #FF5555;
     font-size: 22px;
     font-weight: bold;
     margin: -15px 0px 0px 0px;
@@ -53,7 +52,7 @@
 
 
 
-/* Buttons */
+/* Buttons *////////////////////////////////////////////////////
 // First Layer
 .vpn{
     font-size: 50px;
@@ -67,7 +66,7 @@
 }
 
 .wallpaper-box{
-    font-size: 48px;
+    font-size: 50px;
     font-weight:bold;
     background-color: #121212;
 }
@@ -77,7 +76,6 @@
     font-weight: bold;
     background-color: #121212;
 }
-
 
 
 // Second Layer

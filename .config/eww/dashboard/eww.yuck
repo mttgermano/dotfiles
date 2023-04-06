@@ -5,11 +5,11 @@
 
 
 ;;Variables====================================================;;
-(defvar IMG_PROFILE "/home/matt/Pictures/Profile/profile.jpg")
+(defvar IMG_PROFILE "/home/matt/Pictures/Profile/profile3.png")
 (defvar GIF "/home/matt/Pictures/Profile/eww3.gif")            ;; you have to resize the gif, thus eww's bug
 (defvar NAME "matt")
-(defvar DESKTOP "book")
-(defpoll WALLPAPER :interval "300s" :initial "lua.png"
+(defvar DESKTOP "[book]")
+(defpoll WALLPAPER :interval "500s" :initial "lua.png"
   `/home/matt/.config/eww/dashboard/scripts/change_wallpaper.sh`)
 
 ;;""
@@ -21,16 +21,17 @@
 
 ;;Buttons======================================================;;
 (defwidget photocard []
-    (box :class "photocard" :orientation "v" :spacing 35 :space-evenly "false"
-        (image :path IMG_PROFILE :halign "top" :image-width 150 :image-height 150)
+    (box :class "photocard" :orientation "v" :spacing 20 :space-evenly "false"
+        (image :path IMG_PROFILE :halign "top" :image-width 200 :image-height 200)
         (label :class "username" :halign "center" :wrap "true" :limit-width 25 :text NAME)
         (label :class "hostname" :halign "center" :wrap "true" :limit-width 25 :text DESKTOP))
 )
 ;;
+
 (defwidget wallpaper []
-    (box :class "wallpaper-box"
-    (combo-box-text :class "wallpaper" :items WALLPAPER
-    :onchange "feh --bg-fill --no-fehbg '/home/matt/Pictures/wallpapers/{}'")) 
+    (overlay :class "wallpaper-box" ""
+    (combo-box-text :class "wallpaper" :items WALLPAPER 
+    :onchange "feh --bg-fill --no-fehbg '/home/matt/Pictures/wallpapers/{}'")"") 
 )
 
 (defwidget dolphin []

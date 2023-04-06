@@ -10,6 +10,7 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$docker_context\
 $python\
 $c\
 $rlang\
@@ -22,7 +23,9 @@ $docker_context\
 $container\
 $cmd_duration\
 $line_break\
-$character"""
+$character\
+$linebreak"""
+
 
 add_newline = true 
 
@@ -31,7 +34,7 @@ add_newline = true
 style_user = 'white bold'
 style_root = 'black bold'
 show_always = true
-format = '[$user ]($style)'
+format = "[$user ]($style)"
 
 [hostname]
 ssh_only = false
@@ -52,6 +55,11 @@ format = "[$read_only]($read_only_style) [$path]($style) "
 [fill]
 symbol = " "
 
+[docker_context]
+style = "blue bold"
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+format = '[$symbol$context]($style)'
+
 [c]
 symbol = ' '
 style = 'bold blue'
@@ -60,7 +68,7 @@ commands = [['gcc','--version'],['clang','--version']]
 format = '[$symbol($version)]($style) '
 
 [python]
-format = '[$symbol($version)]($style) '
+format = '[${symbol}(${version} )(\($virtualenv\) )]($style)'
 
 [julia]
 format = '[$symbol($version)]($style) '
