@@ -1,6 +1,6 @@
 ;; eww config
 ;; @author: htpps://github.com/mttgermano
-;; last edit: 12/02/2023
+;; last edit:17/04/2023
 
 
 
@@ -10,7 +10,7 @@
 (defvar NAME "matt")
 (defvar DESKTOP "[book]")
 (defpoll WALLPAPER :interval "500s" :initial "lua.png"
-  `/home/matt/.config/eww/dashboard/scripts/change_wallpaper.sh`)
+  `/home/matt/.config/eww/dashboard/scripts/list_wallpaper.sh`)
 
 ;;""
 
@@ -30,9 +30,10 @@
 
 (defwidget wallpaper []
     (overlay :class "wallpaper-box" ""
-    (combo-box-text :class "wallpaper" :items WALLPAPER 
-    :onchange "feh --bg-fill --no-fehbg '/home/matt/Pictures/wallpapers/{}'")"") 
+    (combo-box-text :class "wallpaper" :items WALLPAPER
+    :onchange "/home/matt/.config/eww/dashboard/scripts/change_wallpaper.sh {}")"")
 )
+;;:onchange "feh --bg-fill --no-fehbg '/home/matt/Pictures/wallpapers/{}'")"")
 
 (defwidget dolphin []
     (box :class "main"
@@ -45,7 +46,7 @@
 )
 
 (defwidget gif []
-    (image :path GIF :halign "center" :wrap "true" :image-width 949 :image-height 413)    
+    (image :path GIF :halign "center" :wrap "true" :image-width 949 :image-height 413)
 )
 
 (defwidget poweroff []
@@ -70,7 +71,7 @@
 
 
 
-;;Window=======================================================;; 
+;;Window=======================================================;;
 
 ;; Ta bugado ;;
 ;;(defwindow background :stacking "bg" :monitor 0 :focusable "false" :wm-ignore "false"
@@ -79,10 +80,10 @@
 ;;)
 
 
-(defwindow profile :stacking "fg" :monitor 0 :wm-ignore "false" 
-    :geometry (geometry :x 6 :y 52 :width 470 :height 400) 
+(defwindow profile :stacking "fg" :monitor 0 :wm-ignore "false"
+    :geometry (geometry :x 6 :y 52 :width 470 :height 400)
         (photocard)
-) 
+)
 
 
 (defwindow wallpaper_selector :stacking "fg" :monitor 0 :wm-ignore "false"
@@ -97,7 +98,7 @@
 )
 
 (defwindow vpn :stacking "fg" :monitor 0 :wm-ignore "false"
-    :geometry (geometry :x 724 :y 255 :width 230 :height 195) 
+    :geometry (geometry :x 724 :y 255 :width 230 :height 195)
         (vpn)
 )
 
@@ -117,16 +118,16 @@
 (defwindow reboot :stacking "fg" :monitor 0 :wm-ignore "false"
     :geometry (geometry :x 246 :y 875 :width 229 :height 195)
         (reboot)
-) 
+)
 
 
 (defwindow sleep :stacking "fg" :monitor 0 :wm-ignore "false"
     :geometry (geometry :x 486 :y 875 :width 229 :height 195)
         (sleep)
-) 
+)
 
 
 (defwindow logout :stacking "fg" :monitor 0 :wm-ignore "false"
     :geometry (geometry :x 726 :y 875 :width 229 :height 195)
         (logout)
-) 
+)
