@@ -1,0 +1,40 @@
+#!/bin/bash
+
+start_vpn () {
+    # sudo openvpn --config /home/matt/scripts/bin/htb_vpn.ovpn & await 2 && clear
+    sudo openvpn --config /home/matt/scripts/bin/htb_vpn.ovpn 
+}
+
+stop_vpn () {
+    # sudo killall openvpn & await 1 && clear
+    sudo killall openvpn 
+}
+
+await () {
+    sleep $1
+}
+
+display_help () {
+    echo "------------------------------------------------"
+    echo "HTB - Start the Hack The Box VPN on your machine"
+    echo "------------------------------------------------"
+    echo "Use cases:"
+    echo "help      |   display the help message"
+    echo "start     |   start the VPN"
+    echo "stop      |   VPN status"
+    echo "status    |   VPN status"
+}
+
+main () {
+    if [[ $1 == "start" ]]; then
+        start_vpn;
+    elif [[ $1 == "status" ]]; then
+        ps aux | grep openvpn | grep -v "grep"
+    elif [[ $1 == "stop" ]]; then
+        stop_vpn
+    else
+        display_help
+    fi
+}
+
+main $1
