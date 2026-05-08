@@ -3,16 +3,11 @@ alias dirfonts="cd /home/matt/.local/share/fonts/"
 alias ll="lsd --group-directories-first -lah"
 alias ls="lsd --group-directories-first -X"
 alias poweroff="sudo systemctl poweroff"
-alias env_start="source ./env/bin/activate" 
 alias xclip="xclip -selection clipboard"
-alias srct="tmux source-file /home/matt/.tmux.conf"
 alias src="source /home/matt/.bashrc"
 alias update="sudo pacman -Syu"
-alias env_stop="deactivate"
 alias pwc="pwd | xclip"
 alias py="python"
-alias j="julia"
-alias dot="dot.sh"
 alias cat="bat"
 
 # Functions ####################################################
@@ -29,6 +24,12 @@ function cd {
 
 jmp (){
     cd $(find /home/matt/* -type d | fzf)
+}
+
+ff() {
+  FILE=$(find /home/matt/* -type f | fzf --preview "bat --color=always {}")
+  cd ${FILE%/*}
+  nvim $FILE
 }
 
 zombies (){
